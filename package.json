@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build:lectures": "node scripts/build-lectures.js",
+    "start": "node --no-warnings server.js",
+    "check": "node --check app.js && node --check server.js && node --check scripts/build-lectures.js && node --check course-lectures.js && node --check course-data.js"
+  },
+  "dependencies": {}
+}

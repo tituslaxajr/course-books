@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Shepherd's Curriculum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=dynamic-search-tracker" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <h1>The Shepherd's<br />Curriculum</h1>
+        </div>
+
+        <nav class="side-nav">
+          <button class="nav-item active" data-view="library">
+            <span data-icon="book-open"></span>
+            <span>Library</span>
+          </button>
+          <button class="nav-item" data-view="progress">
+            <span data-icon="chart"></span>
+            <span>My Progress</span>
+          </button>
+          <button class="nav-item" data-view="schedule">
+            <span data-icon="calendar"></span>
+            <span>Schedule</span>
+          </button>
+          <button class="nav-item" data-view="notes">
+            <span data-icon="file-text"></span>
+            <span>Notes</span>
+          </button>
+          <button class="nav-item" data-view="bookmarks">
+            <span data-icon="bookmark"></span>
+            <span>Bookmarks</span>
+          </button>
+          <button class="nav-item" data-view="resources">
+            <span data-icon="folder"></span>
+            <span>Resources</span>
+          </button>
+        </nav>
+
+        <div class="pastor-card">
+          <span class="avatar">JL</span>
+          <span>
+            <strong>Jr. Laxa</strong>
+            <small>Pastor</small>
+          </span>
+          <span data-icon="chevron-down"></span>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <label class="search-box">
+            <span data-icon="search"></span>
+            <input id="searchInput" type="search" placeholder="Search courses, topics, or Scripture..." />
+          </label>
+        </header>
+
+        <section id="libraryView" class="view active-view">
+          <div class="course-stage">
+            <div class="course-picker" aria-label="Course selector">
+              <button class="round-button" id="prevCourse" type="button" aria-label="Previous course">
+                <span data-icon="arrow-up"></span>
+              </button>
+              <button class="round-button" id="nextCourse" type="button" aria-label="Next course">
+                <span data-icon="arrow-down"></span>
+              </button>
+            </div>
+
+            <div class="book-cover" aria-hidden="true">
+              <div class="book-spine"></div>
+              <p id="coverNumber">Course 1</p>
+              <h2 id="coverTitle">Who Is God?</h2>
+              <span id="coverCategory">Theology Proper</span>
+              <div class="branch-art"></div>
+              <small>The Shepherd's Curriculum</small>
+            </div>
+
+            <article class="hero-copy">
+              <p id="courseEyebrow" class="eyebrow">Course 1 of 12</p>
+              <div id="courseVisual" class="course-visual-inline"></div>
+              <h2 id="courseTitle">Who Is God? - Theology Proper</h2>
+              <div class="gold-rule"></div>
+              <p id="courseDescription"></p>
+              <div class="hero-actions">
+                <button class="primary-action" id="continueCourse" type="button">
+                  <span>Continue Course</span>
+                  <span data-icon="arrow-right"></span>
+                </button>
+                <button class="icon-button" id="bookmarkCourse" type="button" aria-label="Bookmark course">
+                  <span data-icon="bookmark"></span>
+                </button>
+                <button class="icon-button" id="shareCourse" type="button" aria-label="Share course">
+                  <span data-icon="share"></span>
+                </button>
+                <button class="icon-button" id="downloadCourse" type="button" aria-label="Download course">
+                  <span data-icon="download"></span>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <section class="course-detail">
+            <div class="about-panel">
+              <h3>About This Course</h3>
+              <p id="courseAbout"></p>
+            </div>
+
+            <dl class="course-facts">
+              <div><dt>Sessions</dt><dd id="factSessions">4</dd></div>
+              <div><dt>Level</dt><dd id="factLevel">Foundational</dd></div>
+              <div><dt>Format</dt><dd id="factFormat">Self-paced</dd></div>
+              <div><dt>Estimated Time</dt><dd id="factTime">4-6 hours</dd></div>
+              <div><dt>Category</dt><dd id="factCategory">Theology Proper</dd></div>
+              <div><dt>Suggested Reading</dt><dd id="factReadings">5 books</dd></div>
+            </dl>
+          </section>
+
+          <section class="content-grid">
+            <div>
+              <div class="section-heading">
+                <span>Course Library</span>
+                <strong id="courseCount">12 courses</strong>
+              </div>
+              <div id="courseList" class="course-list"></div>
+            </div>
+
+            <div>
+              <div class="section-heading">
+                <span>Sessions</span>
+                <strong id="sessionCount">4 sessions</strong>
+              </div>
+              <div id="sessionList" class="session-list"></div>
+            </div>
+          </section>
+        </section>
+
+        <section id="progressView" class="view"></section>
+        <section id="scheduleView" class="view"></section>
+        <section id="notesView" class="view"></section>
+        <section id="bookmarksView" class="view"></section>
+        <section id="resourcesView" class="view"></section>
+        <section id="sessionView" class="view"></section>
+      </main>
+    </div>
+
+    <script src="/course-data.js"></script>
+    <script src="/course-lectures.js?v=dynamic-search-tracker"></script>
+    <script src="/course-visuals.js?v=dynamic-search-tracker"></script>
+    <script src="/app.js?v=dynamic-search-tracker"></script>
+  </body>
+</html>
