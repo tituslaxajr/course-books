@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Shepherd's Curriculum</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=dynamic-search-tracker" />
+    <link rel="stylesheet" href="/styles.css?v=resource-pdf-reader" />
   </head>
   <body>
     <div class="app-shell">
@@ -21,27 +22,27 @@
         </div>
 
         <nav class="side-nav">
-          <button class="nav-item active" data-view="library">
+          <button class="nav-item active" data-view="library" data-short-label="Library">
             <span data-icon="book-open"></span>
-            <span>Library</span>
+            <span>Home</span>
           </button>
-          <button class="nav-item" data-view="progress">
+          <button class="nav-item" data-view="progress" data-short-label="Progress">
             <span data-icon="chart"></span>
             <span>My Progress</span>
           </button>
-          <button class="nav-item" data-view="schedule">
+          <button class="nav-item" data-view="schedule" data-short-label="Schedule">
             <span data-icon="calendar"></span>
             <span>Schedule</span>
           </button>
-          <button class="nav-item" data-view="notes">
+          <button class="nav-item" data-view="notes" data-short-label="Notes">
             <span data-icon="file-text"></span>
             <span>Notes</span>
           </button>
-          <button class="nav-item" data-view="bookmarks">
+          <button class="nav-item" data-view="bookmarks" data-short-label="Saved">
             <span data-icon="bookmark"></span>
             <span>Bookmarks</span>
           </button>
-          <button class="nav-item" data-view="resources">
+          <button class="nav-item" data-view="resources" data-short-label="Resources">
             <span data-icon="folder"></span>
             <span>Resources</span>
           </button>
@@ -63,85 +64,81 @@
             <span data-icon="search"></span>
             <input id="searchInput" type="search" placeholder="Search courses, topics, or Scripture..." />
           </label>
+          <div class="topbar-actions" aria-label="Account controls">
+            <button class="icon-button" type="button" aria-label="Notifications">
+              <span data-icon="bell"></span>
+            </button>
+            <div class="topbar-avatar" aria-label="Prepared for Jr. Laxa">JL</div>
+          </div>
         </header>
 
         <section id="libraryView" class="view active-view">
-          <div class="course-stage">
-            <div class="course-picker" aria-label="Course selector">
-              <button class="round-button" id="prevCourse" type="button" aria-label="Previous course">
-                <span data-icon="arrow-up"></span>
-              </button>
-              <button class="round-button" id="nextCourse" type="button" aria-label="Next course">
-                <span data-icon="arrow-down"></span>
-              </button>
-            </div>
-
-            <div class="book-cover" aria-hidden="true">
-              <div class="book-spine"></div>
-              <p id="coverNumber">Course 1</p>
-              <h2 id="coverTitle">Who Is God?</h2>
-              <span id="coverCategory">Theology Proper</span>
-              <div class="branch-art"></div>
-              <small>The Shepherd's Curriculum</small>
-            </div>
-
-            <article class="hero-copy">
-              <p id="courseEyebrow" class="eyebrow">Course 1 of 12</p>
-              <div id="courseVisual" class="course-visual-inline"></div>
-              <h2 id="courseTitle">Who Is God? - Theology Proper</h2>
-              <div class="gold-rule"></div>
+          <div class="bookcase-dashboard">
+            <div class="dashboard-hidden-controls" aria-hidden="true">
+              <p id="courseEyebrow" class="eyebrow"></p>
+              <h2 id="courseTitle"></h2>
               <p id="courseDescription"></p>
-              <div class="hero-actions">
-                <button class="primary-action" id="continueCourse" type="button">
-                  <span>Continue Course</span>
-                  <span data-icon="arrow-right"></span>
-                </button>
-                <button class="icon-button" id="bookmarkCourse" type="button" aria-label="Bookmark course">
-                  <span data-icon="bookmark"></span>
-                </button>
-                <button class="icon-button" id="shareCourse" type="button" aria-label="Share course">
-                  <span data-icon="share"></span>
-                </button>
-                <button class="icon-button" id="downloadCourse" type="button" aria-label="Download course">
-                  <span data-icon="download"></span>
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <section class="course-detail">
-            <div class="about-panel">
-              <h3>About This Course</h3>
-              <p id="courseAbout"></p>
+              <h3 id="courseAbout"></h3>
+              <p id="featuredSummary"></p>
+              <span id="factSessions"></span>
+              <span id="factLevel"></span>
+              <span id="factFormat"></span>
+              <span id="factTime"></span>
+              <span id="factCategory"></span>
+              <span id="factReadings"></span>
+              <span id="featuredProgressValue"></span>
+              <span id="featuredProgressLabel"></span>
+              <span id="featuredProgressBar"></span>
+              <span id="sessionHeading"></span>
+              <span id="sessionCount"></span>
+              <span id="supportHeading"></span>
+              <span id="supportCount"></span>
+              <span id="courseGlossaryHeading"></span>
+              <span id="courseGlossaryCount"></span>
+              <span id="libraryGoalCount"></span>
+              <button id="prevCourse" type="button"></button>
+              <button id="nextCourse" type="button"></button>
+              <button id="continueCourse" type="button"><span></span></button>
+              <button id="bookmarkCourse" type="button"></button>
+              <button id="shareCourse" type="button"></button>
+              <button id="downloadCourse" type="button"></button>
+              <div id="courseSupport"></div>
+              <div id="courseGlossary"></div>
+              <div id="libraryGoal"></div>
             </div>
 
-            <dl class="course-facts">
-              <div><dt>Sessions</dt><dd id="factSessions">4</dd></div>
-              <div><dt>Level</dt><dd id="factLevel">Foundational</dd></div>
-              <div><dt>Format</dt><dd id="factFormat">Self-paced</dd></div>
-              <div><dt>Estimated Time</dt><dd id="factTime">4-6 hours</dd></div>
-              <div><dt>Category</dt><dd id="factCategory">Theology Proper</dd></div>
-              <div><dt>Suggested Reading</dt><dd id="factReadings">5 books</dd></div>
-            </dl>
-          </section>
+            <section class="book-shelf-section">
+              <div class="book-shelf-heading">
+                <h2>Currently Reading</h2>
+                <button class="shelf-link" type="button" data-course-route="/courses/who-is-god-theology-proper">View all <span data-icon="arrow-right"></span></button>
+              </div>
+              <div id="currentShelf" class="book-shelf book-shelf-featured"></div>
+            </section>
 
-          <section class="content-grid">
-            <div>
-              <div class="section-heading">
-                <span>Course Library</span>
+            <section class="book-shelf-section">
+              <div class="book-shelf-heading">
+                <h2 id="sessionHeadingVisible">Continue Reading</h2>
+                <button class="shelf-link" type="button" data-view="schedule">View all <span data-icon="arrow-right"></span></button>
+              </div>
+              <div id="sessionList" class="book-shelf"></div>
+            </section>
+
+            <section class="book-shelf-section">
+              <div class="book-shelf-heading">
+                <h2 id="courseListHeading">My Courses</h2>
                 <strong id="courseCount">12 courses</strong>
               </div>
-              <div id="courseList" class="course-list"></div>
-            </div>
+              <div id="courseList" class="book-shelf"></div>
+            </section>
 
-            <div>
-              <div class="section-heading">
-                <span>Sessions</span>
-                <strong id="sessionCount">4 sessions</strong>
+            <section class="book-shelf-section">
+              <div class="book-shelf-heading">
+                <h2>Completed</h2>
+                <button class="shelf-link" type="button" data-view="progress">View all <span data-icon="arrow-right"></span></button>
               </div>
-              <div id="sessionList" class="session-list"></div>
-            </div>
-          </section>
+              <div id="completedShelf" class="book-shelf book-shelf-completed"></div>
+            </section>
+          </div>
         </section>
 
         <section id="progressView" class="view"></section>
@@ -153,9 +150,12 @@
       </main>
     </div>
 
+    <dialog id="resourceModal" class="session-dialog resource-dialog">
+      <div id="resourceModalContent"></div>
+    </dialog>
+
     <script src="/course-data.js"></script>
-    <script src="/course-lectures.js?v=dynamic-search-tracker"></script>
-    <script src="/course-visuals.js?v=dynamic-search-tracker"></script>
-    <script src="/app.js?v=dynamic-search-tracker"></script>
+    <script src="/course-lectures.js?v=resource-pdf-reader"></script>
+    <script src="/app.js?v=resource-pdf-reader"></script>
   </body>
 </html>

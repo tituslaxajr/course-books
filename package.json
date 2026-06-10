@@ -4,5 +4,7 @@
     "start": "node --no-warnings server.js",
     "check": "node --check app.js && node --check server.js && node --check scripts/build-lectures.js && node --check course-lectures.js && node --check course-data.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4"
+  }
 }

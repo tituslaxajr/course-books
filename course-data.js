@@ -22,11 +22,27 @@ window.SHEPHERD_CURRICULUM = {
         "Identify how a distorted view of God leads to distorted living"
       ],
       "readings": [
-        "Knowing God — J. I. Packer",
-        "None Greater — Matthew Barrett",
-        "The Holiness of God — R. C. Sproul",
-        "God's Glory Alone — David VanDrunen",
-        "The Attributes and Work of God — Pratt"
+        {
+          "title": "Knowing God",
+          "author": "J. I. Packer",
+          "notes": "Core orientation reading for theology proper."
+        },
+        {
+          "title": "None Greater",
+          "author": "Matthew Barrett"
+        },
+        {
+          "title": "The Holiness of God",
+          "author": "R. C. Sproul"
+        },
+        {
+          "title": "God's Glory Alone",
+          "author": "David VanDrunen"
+        },
+        {
+          "title": "The Attributes and Work of God",
+          "author": "Pratt"
+        }
       ],
       "sessions": [
         {
@@ -137,10 +153,22 @@ window.SHEPHERD_CURRICULUM = {
         "Apply Trinitarian theology to worship, prayer, and community"
       ],
       "readings": [
-        "Simply Trinity — Matthew Barrett",
-        "The Forgotten Trinity — James R. White",
-        "The Essential Trinity — Brandon D. Crowe (ed.)",
-        "Nature and Work of the Holy Spirit — Ra McLaughlin"
+        {
+          "title": "Simply Trinity",
+          "author": "Matthew Barrett"
+        },
+        {
+          "title": "The Forgotten Trinity",
+          "author": "James R. White"
+        },
+        {
+          "title": "The Essential Trinity",
+          "author": "Brandon D. Crowe (ed.)"
+        },
+        {
+          "title": "Nature and Work of the Holy Spirit",
+          "author": "Ra McLaughlin"
+        }
       ],
       "sessions": [
         {
@@ -1319,6 +1347,12 @@ window.SHEPHERD_CURRICULUM = {
         "Remaining Faithful in Ministry — John MacArthur",
         "The Preacher's Catechism — Lewis Allen",
         "Need to Know — Gary Millar"
+      ],
+      "crosswaySources": [
+        "The Reformed Pastor — Richard Baxter — Sessions 1, 2, 3, 4",
+        "Expositional Leadership — David Helm — Sessions 1, 3, 4",
+        "Courage — Various — Sessions 1, 2, 3",
+        "A Christian's Guide to Mental Illness — David Prince & James Zeigler — Sessions 3, 4"
       ],
       "sessions": [
         {
